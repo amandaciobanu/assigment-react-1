@@ -20,17 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a743ecb-86e4-49ec-b669-247ecb65c853" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/LoginForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RegisterForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ForgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ForgotPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608042576912</updated>
       <workItem from="1608042578101" duration="7915000" />
-      <workItem from="1608103644614" duration="1361000" />
+      <workItem from="1608103644614" duration="7600000" />
     </task>
     <servers />
   </component>
@@ -113,15 +105,5 @@
       <screen x="0" y="56" width="3200" height="1744" />
     </state>
     <state x="1171" y="424" width="848" height="978" key="FileChooserDialogImpl/0.56.3200.1744@0.56.3200.1744" timestamp="1608103767556" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
