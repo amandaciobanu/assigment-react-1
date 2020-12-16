@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Home from './pages/Home';
+import ForgotPassword from "./pages/ForgotPassword";
 
 
 // import components
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/forgotPassword">
+            <ForgotPassword />
           </Route>
           <Route path="*">
             <Error />

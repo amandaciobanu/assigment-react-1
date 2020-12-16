@@ -58,7 +58,7 @@ export default function LoginForm() {
           />
         </div>
 
-        {loginError && <p style= color:"red">Login failed</p>}
+        {loginError && <p>Login failed</p>}
 
         <button
             id='fetch-button'

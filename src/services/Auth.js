@@ -17,6 +17,12 @@ async function login(username, password) {
   return null;
 }
 
+
+async function requestPasswordReset(email) {
+  await sleep(2000);
+}
+
 export  {
-  login
+  login,
+  requestPasswordReset
 }
