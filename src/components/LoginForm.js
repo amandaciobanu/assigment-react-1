@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import { login } from '../services/Auth'
 import { Link, Redirect } from 'react-router-dom'
+import { useAuth } from "../context/auth";
 
 export default function LoginForm() {
 
-  const [authUser, setAuthUser] = useState(null);
+  const { auth, setAuth } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [requesting, setRequesting] = useState(false);
@@ -17,7 +18,7 @@ export default function LoginForm() {
     const result = await login(username, password);
     if (result) {
       setLoginError(false);
-      setAuthUser(result);
+      setAuth(result);
     }
     else {
       setLoginError(true);
@@ -26,56 +27,66 @@ export default function LoginForm() {
     setRequesting(false);
   }
 
-  if (authUser) {
+  if (auth) {
     return <Redirect to='/' />;
   }
 
   return (
-      <form>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input type="email"
-                 className="form-control"
-                 id="email"
-                 aria-describedby="emailHelp"
-                 onChange={e => {
-                   setUsername(e.target.value);
-                 }}
-          />
-            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone
-              else.</small>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12 col-sm-4 col-sm-offset-4">
+            <form>
+              <div className="form-group">
+                <label htmlFor="exampleInputEmail1">Email address</label>
+                <input type="email"
+                       className="form-control"
+                       placeholder="Your Email"
+                       id="email"
+                       aria-describedby="emailHelp"
+                       onChange={e => {
+                         setUsername(e.target.value);
+                       }}
+                />
+                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="exampleInputPassword1">Password</label>
+                <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Your Password"
+                    id="password"
+                    onChange={e => {
+                      setPassword(e.target.value);
+                    }}
+                />
+              </div>
+
+              {loginError && <p>Login failed</p>}
+
+              <button
+                  id='fetch-button'
+                  type="submit"
+                  disabled={username.length === 0 || password.length === 0 || requesting}
+                  className="btn btn-dark btn-lg btn-block"
+                  onClick={performLogIn}
+              >
+                {requesting ? 'Logging in...' : 'Log in'}
+              </button>
+              <div>
+                <Link to="/forgotPassword">Forgot your password?</Link>
+
+              </div>
+              <div>
+                <Link to="/register">Don't have an account?</Link>
+
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
 
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input
-              type="password"
-              className="form-control"
-              id="password"
-              onChange={e => {
-                setPassword(e.target.value);
-              }}
-          />
-        </div>
-
-        {loginError && <p>Login failed</p>}
-
-        <button
-            id='fetch-button'
-            type="submit"
-            disabled={username.length === 0 || password.length === 0 || requesting}
-            className="btn btn-primary" onClick={performLogIn}
-        >
-          {requesting ? 'Logging in...' : 'Log in'}
-        </button>
-        <div>
-          <Link to="/forgotPassword">Forgot your password?</Link>
-
-        </div>
-        <div>
-          <Link to="/register">Don't have an account?</Link>
-
-        </div>
-      </form>
   )
 }

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {register} from '../services/Auth'
 import { Link, Redirect } from 'react-router-dom'
-
+import { useAuth } from "../context/auth";
 
 export default function Register(){
 
@@ -12,7 +12,7 @@ export default function Register(){
   const [password2, setPassword2] = useState('');
   const [requesting, setRequesting] = useState(false);
   const [registerError, setRegisterError] = useState(false);
-  const [registerSuccess, setRegisterSuccess] = useState(false);
+  const { auth, setAuth } = useAuth();
 
   const validForm = () =>{
     if (userFirstName.length > 0
@@ -20,10 +20,12 @@ export default function Register(){
         && userEmail.length > 0
         && password1.length > 5
         && password2.length > 5
-        && password1 === password2
-    ){
-      return true
+        && password1 === password2)
+    {
+      return true;
     }
+
+    return false;
   }
 
   const performRegister = async (e) => {
@@ -32,7 +34,7 @@ export default function Register(){
     setRequesting(true);
     const result = await register(userFirstName, userLastName, userEmail, password1);
     if (result) {
-      setRegisterSuccess(true);
+      setAuth(result);
     }
     else {
       setRegisterError(true);
@@ -41,14 +43,14 @@ export default function Register(){
     setRequesting(false);
   }
 
-  if (registerSuccess){
+  if (auth){
     return <Redirect to='/' />;
   }
 
   return(
-      <div className='container-fluid'>
+      <div className='container'>
         <div className="row">
-          <div className="col">
+          <div className="col-xs-12 col-sm-4 col-sm-offset-4">
             <form>
               <h3>Register</h3>
 
