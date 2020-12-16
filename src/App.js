@@ -12,10 +12,21 @@ import {AuthContext} from "./context/auth";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [auth, setAuth] = useState(null);
+  const storedAuth = JSON.parse(localStorage.getItem('auth'));
+  const [auth, setAuth] = useState(storedAuth);
+
+  const setAuthLocalStorage = (v) => {
+    if (v) {
+      localStorage.setItem('auth', JSON.stringify(v));
+    } else {
+      localStorage.removeItem('auth')
+    }
+
+    setAuth(v);
+  }
 
   return (
-      <AuthContext.Provider value={{auth, setAuth}}>
+      <AuthContext.Provider value={{auth, setAuth: setAuthLocalStorage}}>
         <Router>
           <Navbar/>
           <Switch>

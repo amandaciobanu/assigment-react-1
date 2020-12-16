@@ -1,10 +1,14 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {useAuth} from "../context/auth";
 
 export default function Navbar() {
 
-  const {auth} = useAuth();
+  const {auth, setAuth} = useAuth();
+
+  const performLogout=() =>{
+    setAuth(null)
+  }
 
   return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,7 +18,7 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse mr-auto" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ml-auto">
             {
               !auth &&
               <li className="nav-item active">
@@ -24,6 +28,18 @@ export default function Navbar() {
             <li className="nav-item disabled">
               {auth ? auth.email : "Not Logged In"}
             </li>
+            {
+              auth &&
+              <li className="nav-item">
+                <button
+                    type="submit"
+                    className='bt btn-info'
+                    onClick={performLogout}
+                >
+                  log out
+                </button>
+              </li>
+            }
           </ul>
         </div>
       </nav>
