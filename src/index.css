@@ -8,7 +8,8 @@ Fonts
 
 
 :root {
-  --primaryLightColor: #74BF46;
+  --primaryLightColor: #DE2604;
+  --lightOrange: #f3935a;
   --primaryDarkColor: #293039;
   --mainWhite: #FFF9F5;
   --offWhite: #F6EAE3;
@@ -66,3 +67,159 @@ img {
   display: block;
 }
 
+
+/*
+====================
+Form Style
+====================
+*/
+
+.login-form{
+  background-image: url("images/background-form.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form:after {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+
+.login-form-row{
+  min-width: 31.250em;
+  padding: 2em;
+  opacity: 90%;
+  border-radius: var(--mainBorderRadius);
+  background: rgba(23, 23, 23, 0.9);
+  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+.login-form h3,
+.login-form p{
+  color: var(--mainWhite);
+  font-weight: 700;
+  text-align: center;
+}
+
+
+#basketball{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  animation-name: fly;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(65px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+span.icon-animation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.basketball-icon{
+  color: var(--primaryLightColor);
+  font-size: 2em;
+}
+
+label{
+  color: var(--lightOrange);
+  font-weight: 700;
+}
+/*
+====================
+Button - Form
+====================
+*/
+button.btn-form {
+  margin: 1.5em 0 1.5em 0;
+  border: 1px solid var(--mainWhite);
+  outline: none;
+  color: var(--mainWhite);
+  background: var(--mainBlack);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: var(--mainBorderRadius)
+}
+
+button.btn-form:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: var(--mainBorderRadius);
+}
+
+button.btn-form:active {
+  color: var(--mainWhite);
+
+}
+
+button.btn-form:active:after {
+  background: var(--mainBlack)
+}
+button.btn-form:hover{
+  color: var(--mainWhite);
+}
+
+button.btn-form:hover:before {
+  opacity: 90%;
+}
+
+button.btn-form:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--mainBlack);
+  left: 0;
+  top: 0;
+  border-radius: var(--mainBorderRadius);
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/*
+====================
+Media Queries
+====================
+*/
+
+@media screen and (max-width: 425px) {
+  .login-form-row{
+    min-width: var(--fullWidth)
+  }
+}

@@ -1,15 +1,25 @@
 import React, {useState} from 'react'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-// import pages
+
+// Import Pages
 import Register from "./pages/Register";
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Home from './pages/Home';
 import ForgotPassword from "./pages/ForgotPassword";
+
+// Global Service
 import {AuthContext} from "./context/auth";
 
-// import components
+//Font Awesome
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {fab} from '@fortawesome/free-brands-svg-icons'
+import {faBasketballBall} from '@fortawesome/free-solid-svg-icons'
+
+// Import Components
 import Navbar from "./components/Navbar";
+
+library.add(fab, faBasketballBall)
 
 function App() {
   const storedAuth = JSON.parse(localStorage.getItem('auth'));

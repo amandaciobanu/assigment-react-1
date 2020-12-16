@@ -3,6 +3,9 @@ import { login } from '../services/Auth'
 import { Link, Redirect } from 'react-router-dom'
 import { useAuth } from "../context/auth";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 export default function LoginForm() {
 
   const { auth, setAuth } = useAuth();
@@ -32,12 +35,15 @@ export default function LoginForm() {
   }
 
   return (
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div className="container-fluid login-form">
+        <div className="row login-form-row">
+          <div className='col-12'>
+            <span className='icon-animation'><FontAwesomeIcon id='basketball' className="basketball-icon" icon="basketball-ball" /></span>
+            <h3>Welcome Back</h3>
+            <p>Please, login to your account</p>
             <form>
               <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Email address</label>
+                <label htmlFor="InputEmail1">Email address</label>
                 <input type="email"
                        className="form-control"
                        placeholder="Your Email"
@@ -67,13 +73,12 @@ export default function LoginForm() {
               {loginError && <p>Login failed</p>}
 
               <button
-                  id='fetch-button'
                   type="submit"
                   disabled={username.length === 0 || password.length === 0 || requesting}
-                  className="btn btn-dark btn-lg btn-block"
+                  className="btn btn-lg btn-block btn-form"
                   onClick={performLogIn}
               >
-                {requesting ? 'Logging in...' : 'Log in'}
+                {requesting ? 'Logging in...' : 'Login'}
               </button>
               <div>
                 <Link to="/forgotPassword">Forgot your password?</Link>
