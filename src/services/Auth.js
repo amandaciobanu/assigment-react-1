@@ -2,11 +2,11 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function login(username, password) {
+async function login(email, password) {
 
   await sleep(2000);
 
-  if (username === "amanda@ciobanu.org") {
+  if (email === "amanda@ciobanu.org") {
     return {
       firstName: "Amanda",
       lastName: "Ciobanu",
@@ -17,6 +17,21 @@ async function login(username, password) {
   return null;
 }
 
+async function register(firstName, lastName, email, password) {
+
+  await sleep(2000);
+
+  if (email === "amanda@ciobanu.org") {
+    return null;
+  }
+
+    return {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+    };
+}
+
 
 async function requestPasswordReset(email) {
   await sleep(2000);
@@ -24,5 +39,6 @@ async function requestPasswordReset(email) {
 
 export  {
   login,
-  requestPasswordReset
+  requestPasswordReset,
+  register
 }
