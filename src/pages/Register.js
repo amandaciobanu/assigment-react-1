@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {register} from '../services/Auth'
 import { Link, Redirect } from 'react-router-dom'
 import { useAuth } from "../context/auth";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function Register(){
 
@@ -18,8 +19,8 @@ export default function Register(){
     if (userFirstName.length > 0
         && userLastName.length > 0
         && userEmail.length > 0
-        && password1.length > 5
-        && password2.length > 5
+        && password1.length > 8
+        && password2.length > 8
         && password1 === password2)
     {
       return true;
@@ -48,12 +49,13 @@ export default function Register(){
   }
 
   return(
-      <div className='container'>
-        <div className="row">
-          <div className="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div className="container-fluid login-form">
+        <div className="row login-form-row">
+          <div className='col-12'>
+            <span className='icon-animation'><FontAwesomeIcon id='basketball' className="basketball-icon" icon="basketball-ball" /></span>
+              <h3>New Here?</h3>
+              <p>Enter your details to get started</p>
             <form>
-              <h3>Register</h3>
-
               <div className="form-group">
                 <label>First name</label>
                 <input type="text"
@@ -63,7 +65,6 @@ export default function Register(){
                          setUserFirstName(e.target.value);
                        }}
                 />
-
               </div>
 
               <div className="form-group">
@@ -98,7 +99,7 @@ export default function Register(){
                        }}
                 />
                 <small id="passwordHelpBlock" className="form-text text-muted">
-                  Your password must be 5-20 characters long.
+                  Your password must be 8-20 characters long.
                 </small>
               </div>
 
@@ -116,16 +117,18 @@ export default function Register(){
               {registerError && <p>Register failed</p>}
 
               <button type="submit"
-                      className="btn btn-dark btn-lg btn-block"
+                      className="btn btn-lg btn-block btn-form"
                       disabled={!validForm() || requesting}
                       onClick={performRegister}
-
-              >Register
+              >
+                Register
               </button>
-              <div className="text-right">
-                <Link to="/login">Already registered? Login here</Link>
-
-                </div>
+              <p>
+                Already registered? {``}
+              </p>
+              <p>
+                <Link className='link-navigation' to="/login">Login Here</Link>
+              </p>
             </form>
           </div>
         </div>

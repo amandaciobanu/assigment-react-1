@@ -58,7 +58,7 @@ export default function LoginForm() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="exampleInputPassword1">Password</label>
+                <label htmlFor="InputPassword">Password</label>
                 <input
                     type="password"
                     className="form-control"
@@ -80,14 +80,18 @@ export default function LoginForm() {
               >
                 {requesting ? 'Logging in...' : 'Login'}
               </button>
-              <div>
-                <Link to="/forgotPassword">Forgot your password?</Link>
 
-              </div>
-              <div>
-                <Link to="/register">Don't have an account?</Link>
+              <small className='forgot-password'>
+                Forgot your password? {``}
+                <Link className='link-navigation' to="/forgotPassword">Click here</Link>
+              </small>
+              <p className='mt-2'>
+                Don't have an account? {``}
+              </p>
+              <p>
+                <Link className='link-navigation' to="/register">Start Now</Link>
+              </p>
 
-              </div>
             </form>
           </div>
         </div>

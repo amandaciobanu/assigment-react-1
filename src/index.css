@@ -9,7 +9,7 @@ Fonts
 
 :root {
   --primaryLightColor: #DE2604;
-  --lightOrange: #f3935a;
+  --lightRed: #ff3d3d;
   --primaryDarkColor: #293039;
   --mainWhite: #FFF9F5;
   --offWhite: #F6EAE3;
@@ -70,7 +70,7 @@ img {
 
 /*
 ====================
-Form Style
+Form Styling
 ====================
 */
 
@@ -78,11 +78,12 @@ Form Style
   background-image: url("images/background-form.jpg");
   background-position: center;
   background-size: cover;
-  min-height: 93vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em;
 }
 
 .login-form:after {
@@ -91,8 +92,8 @@ Form Style
 
 
 .login-form-row{
-  min-width: 31.250em;
-  padding: 2em;
+  min-width: 33em;
+  padding: 1em;
   opacity: 90%;
   border-radius: var(--mainBorderRadius);
   background: rgba(23, 23, 23, 0.9);
@@ -105,6 +106,7 @@ Form Style
   color: var(--mainWhite);
   font-weight: 700;
   text-align: center;
+  text-shadow: var(--lightShadow);
 }
 
 
@@ -141,12 +143,12 @@ span.icon-animation {
 }
 
 label{
-  color: var(--lightOrange);
+  color: var(--lightRed);
   font-weight: 700;
 }
 /*
 ====================
-Button - Form
+Form Button
 ====================
 */
 button.btn-form {
@@ -210,6 +212,29 @@ button.btn-form:after {
   0% { background-position: 0 0; }
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
+}
+
+
+/*
+====================
+Form Links
+====================
+*/
+
+.forgot-password{
+  color: var(--mainWhite);
+}
+
+.link-navigation{
+  color: var(--primaryLightColor);
+}
+
+.link-navigation:hover,
+.link-navigation:focus,
+.link-navigation:active{
+  color: var(--primaryLightColor);
+  text-shadow: var(--lightShadow);
+  text-decoration: none;
 }
 
 /*
