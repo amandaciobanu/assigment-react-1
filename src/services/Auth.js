@@ -1,40 +1,57 @@
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+const baseApiUrl = "https://assigment-api-1.herokuapp.com";
 
-async function login(email, password) {
+async function post(body, func) {
+  try {
+    const response = await fetch(`${baseApiUrl}/${func}`, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
 
-  await sleep(2000);
+    if (response.status === 200) {
+      return response.json();
+    }
 
-  if (email === "amanda@ciobanu.org") {
-    return {
-      firstName: "Amanda",
-      lastName: "Ciobanu",
-      email: "amanda@ciobanu.org"
-    };
+  } catch(e) {
+    // catch any error
   }
 
   return null;
 }
 
+async function login(email, password) {
+
+  const body = {
+    email, password
+  };
+
+  const result = await post(body, 'login');
+  return result;
+}
+
 async function register(firstName, lastName, email, password) {
 
-  await sleep(2000);
+  const body = {
+    firstName, lastName, email, password
+  };
 
-  if (email === "amanda@ciobanu.org") {
-    return null;
-  }
-
-    return {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-    };
+  const result = await post(body, 'register');
+  return result;
 }
 
 
 async function requestPasswordReset(email) {
-  await sleep(2000);
+
+  const body = {
+    email
+  };
+
+  const result = await post(body, 'reset');
+  return result && result.sent;
 }
 
 export  {
