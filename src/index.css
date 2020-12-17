@@ -62,6 +62,18 @@ a {
   text-decoration: none;
 }
 
+/*
+====================
+Homepage Styling
+====================
+*/
+
+.container-homepage{
+  background-image: url("images/banner-test-1.png");
+  background-position: center;
+  background-size: cover;
+  min-height: 90vh;
+}
 
 
 /*
@@ -232,6 +244,12 @@ Form Links
   text-shadow: var(--lightShadow);
   text-decoration: none;
 }
+
+/*
+====================
+Navbar Styling
+====================
+*/
 
 .nav-fx{
  background-color: var(--mainBlack);
