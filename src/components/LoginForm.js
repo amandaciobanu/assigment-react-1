@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { login } from '../services/Auth'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect} from 'react-router-dom'
 import { useAuth } from "../context/auth";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,8 +39,8 @@ export default function LoginForm() {
         <div className="row login-form-row">
           <div className='col-12'>
             <span className='icon-animation'><FontAwesomeIcon id='basketball' className="basketball-icon" icon="basketball-ball" /></span>
-            <h3>Welcome Back</h3>
-            <p>Please, login to your account</p>
+            <h3>Welcome Back!</h3>
+            <p>Please login to your account</p>
             <form>
               <div className="form-group">
                 <label htmlFor="InputEmail1">Email address</label>

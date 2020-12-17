@@ -1,6 +1,7 @@
 import React from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useAuth} from "../context/auth";
+import logo from "../images/fxlogo.svg"
 
 export default function Navbar() {
 
@@ -11,37 +12,47 @@ export default function Navbar() {
   }
 
   return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">Navbar</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse mr-auto" id="navbarNav">
+      <nav className="navbar nav-fx">
+        <div className='container-fluid'>
+          <Link className='navbar-brand' to="/">
+            <img
+                alt=""
+                src={logo}
+                width="80"
+                height="80"
+            />{' '}
+          </Link>
           <ul className="navbar-nav ml-auto">
             {
               !auth &&
-              <li className="nav-item active">
+              <li className="nav-item">
                 <Link className="nav-link" to='/login'>Login</Link>
               </li>
             }
-            <li className="nav-item disabled">
-              {auth ? auth.email : "Not Logged In"}
-            </li>
+          <div className='nav-logged-in'>
+            {
+              auth &&
+              <li className="nav-item user-name">
+                Hello {``}
+                {auth ? auth.firstName : ""}
+              </li>
+            }
             {
               auth &&
               <li className="nav-item">
                 <button
                     type="submit"
-                    className='bt btn-info'
+                    className='btn btn-form'
                     onClick={performLogout}
                 >
                   log out
                 </button>
               </li>
             }
+          </div>
           </ul>
         </div>
+
       </nav>
   )
 }

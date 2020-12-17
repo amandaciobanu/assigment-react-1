@@ -26,7 +26,8 @@ export default function ForgotPassword() {
         <div className="row login-form-row">
           <div className='col-12'>
             <h3>Email Verification</h3>
-            <p>We will send a reset link to your email address. Please enter your email address</p>
+            <p>We will send a reset link to your registered email address.</p>
+            <p>Please enter your email.</p>
             <form>
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Email address</label>
