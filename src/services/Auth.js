@@ -1,8 +1,8 @@
-const baseApiUrl = "https://assigment-api-1.herokuapp.com";
+import { BASE_API_URL } from '../config'
 
 async function post(body, func) {
   try {
-    const response = await fetch(`${baseApiUrl}/${func}`, {
+    const response = await fetch(`${BASE_API_URL}/${func}`, {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',

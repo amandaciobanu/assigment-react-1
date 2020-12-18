@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a743ecb-86e4-49ec-b669-247ecb65c853" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/fxlogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ForgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ForgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/Auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../assigment-api-1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,6 +65,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -85,8 +83,48 @@
       <workItem from="1608042578101" duration="7915000" />
       <workItem from="1608103644614" duration="40955000" />
       <workItem from="1608149079716" duration="1362000" />
-      <workItem from="1608190195223" duration="14136000" />
+      <workItem from="1608190195223" duration="14800000" />
+      <workItem from="1608217304885" duration="4123000" />
+      <workItem from="1608221936177" duration="3314000" />
+      <workItem from="1608283402921" duration="13214000" />
+      <workItem from="1608310809477" duration="1031000" />
     </task>
+    <task id="LOCAL-00001" summary="style: added new banner and text for homepage/ add new favicon to page/cleaned up index.html">
+      <created>1608224977632</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608224977632</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: call the real API">
+      <created>1608225017209</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608225017209</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: moved register form as component. Style: error message for both forms">
+      <created>1608285127040</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608285127040</updated>
+    </task>
+    <task id="LOCAL-00004" summary="style: added new style for banner content home page. Improved the logo's color.">
+      <created>1608289212767</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608289212767</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: add key to newLineText function, replace redirect to route in login/register form.">
+      <created>1608306131649</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608306131649</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,20 +144,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="style: added new banner and text for homepage/ add new favicon to page/cleaned up index.html" />
+    <MESSAGE value="feat: call the real API" />
+    <MESSAGE value="fix: moved register form as component. Style: error message for both forms" />
+    <MESSAGE value="style: added new style for banner content home page. Improved the logo's color." />
+    <MESSAGE value="fix: add key to newLineText function, replace redirect to route in login/register form." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add key to newLineText function, replace redirect to route in login/register form." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1071" y="418" width="1048" height="1018" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608202792710">
       <screen x="0" y="56" width="3200" height="1744" />
     </state>
     <state x="1071" y="418" width="1048" height="1018" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.56.3200.1744@0.56.3200.1744" timestamp="1608202792710" />
-    <state x="1171" y="410" width="848" height="978" key="FileChooserDialogImpl" timestamp="1608141717140">
+    <state x="1171" y="382" width="848" height="978" key="FileChooserDialogImpl" timestamp="1608306168856">
       <screen x="0" y="56" width="3200" height="1744" />
     </state>
-    <state x="1171" y="410" width="848" height="978" key="FileChooserDialogImpl/0.56.3200.1744@0.56.3200.1744" timestamp="1608141717140" />
-    <state x="1039" y="231" width="1112" height="1364" key="RollbackChangesDialog" timestamp="1608201852484">
+    <state x="1171" y="382" width="848" height="978" key="FileChooserDialogImpl/0.56.3200.1744@0.56.3200.1744" timestamp="1608306168856" />
+    <state x="1039" y="189" width="1112" height="1364" key="RollbackChangesDialog" timestamp="1608310988423">
       <screen x="0" y="56" width="3200" height="1744" />
     </state>
-    <state x="1039" y="231" width="1112" height="1364" key="RollbackChangesDialog/0.56.3200.1744@0.56.3200.1744" timestamp="1608201852484" />
+    <state x="1039" y="189" width="1112" height="1364" key="RollbackChangesDialog/0.56.3200.1744@0.56.3200.1744" timestamp="1608310988423" />
     <state x="926" y="56" key="search.everywhere.popup" timestamp="1608114349586">
       <screen x="0" y="56" width="3200" height="1744" />
     </state>
