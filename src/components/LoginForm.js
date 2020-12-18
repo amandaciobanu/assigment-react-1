@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { login } from '../services/Auth'
-import { Link, Redirect} from 'react-router-dom'
+import { Link, Route} from 'react-router-dom'
 import { useAuth } from "../context/auth";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -31,7 +31,7 @@ export default function LoginForm() {
   }
 
   if (auth) {
-    return <Redirect to='/' />;
+    return <Route path='/' />;
   }
 
   return (

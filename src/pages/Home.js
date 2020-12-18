@@ -1,11 +1,11 @@
 import React from "react";
 
 export default function Home(){
+
   function NewlineText(props) {
     const text = props.text;
-    return text.split('\n').map(str => <h1>{str}</h1>);
+    return text.split('\n').map((str, i) => <h1 key={i}>{str}</h1>);
   }
-
 
   return(
         <div className="container-fluid container-homepage">

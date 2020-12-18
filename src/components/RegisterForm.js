@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {register} from '../services/Auth'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Route } from "react-router-dom";
 import { useAuth } from "../context/auth";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
@@ -16,17 +16,12 @@ export default function Register(){
   const { auth, setAuth } = useAuth();
 
   const validForm = () =>{
-    if (userFirstName.length > 0
+    return userFirstName.length > 0
         && userLastName.length > 0
         && userEmail.length > 0
         && password1.length > 7
         && password2.length > 7
-        && password1 === password2)
-    {
-      return true;
-    }
-
-    return false;
+        && password1 === password2;
   }
 
   const performRegister = async (e) => {
@@ -45,7 +40,7 @@ export default function Register(){
   }
 
   if (auth){
-    return <Redirect to='/' />;
+    return <Route path="/"/>;
   }
 
   return(
