@@ -70,7 +70,9 @@ export default function LoginForm() {
                 />
               </div>
 
-              {loginError && <p>Login failed</p>}
+              {/*Login error message*/}
+
+              {loginError && <p><small className='error-message'>There was a problem logging in. Please,check your email and password</small></p>}
 
               <button
                   type="submit"

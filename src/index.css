@@ -245,6 +245,13 @@ Form Links
   text-decoration: none;
 }
 
+
+.error-message{
+  color: var(--lightRed);
+  font-weight: 700;
+
+}
+
 /*
 ====================
 Navbar Styling
