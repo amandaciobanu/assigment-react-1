@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {useAuth} from "../context/auth";
-import logo from "../images/fxlogo.svg"
+import logo from "../images/logo-fx.svg"
 
 export default function Navbar() {
 

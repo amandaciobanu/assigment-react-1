@@ -69,10 +69,31 @@ Homepage Styling
 */
 
 .container-homepage{
-  background-image: url("images/banner-test-1.png");
+  background-image: url("images/banner-homepage.png");
   background-position: center;
   background-size: cover;
   min-height: 90vh;
+}
+
+.banner-content{
+  padding: 3em;
+  margin: 3em;
+  white-space: pre-wrap;
+}
+
+.banner-content h1{
+  font-size: 4em;
+  font-weight: 600;
+  color: var(--mainWhite) !important;
+
+}
+
+.banner-content p{
+  color: var(--primaryLightColor);
+}
+
+.lead-text{
+  font-weight: 700;
 }
 
 
@@ -292,7 +313,29 @@ Media Queries
 ====================
 */
 
+
+@media screen and (max-width: 780px) {
+  .banner-content{
+    margin: 0;
+    padding: 2em;
+  }
+}
 @media screen and (max-width: 425px) {
+  .banner-content{
+    margin: 0;
+    padding: 2em;
+  }
+
+  .banner-content h1{
+    font-size: 1.2em;
+  }
+
+  .banner-content p{
+    font-size: .8em;
+    font-weight: 600;
+    text-align: justify;
+  }
+
   .login-form-row{
     min-width: var(--fullWidth)
   }
