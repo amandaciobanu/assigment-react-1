@@ -6,7 +6,6 @@ Fonts
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway&display=swap');
 
-
 :root {
   --primaryLightColor: #DE2604;
   --lightRed: #ff3d3d;
@@ -32,7 +31,6 @@ Global variables
   padding: 0;
   box-sizing: border-box;
 }
-
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -85,7 +83,6 @@ Homepage Styling
   font-size: 4em;
   font-weight: 600;
   color: var(--mainWhite) !important;
-
 }
 
 .banner-content p{
@@ -95,7 +92,6 @@ Homepage Styling
 .lead-text{
   font-weight: 700;
 }
-
 
 /*
 ====================
@@ -126,8 +122,7 @@ Form Styling
   opacity: 90%;
   border-radius: var(--mainBorderRadius);
   background: rgba(23, 23, 23, 0.9);
-  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
-
+  box-shadow: -1px 4px 28px 0 rgba(0, 0, 0, 0.75);
 }
 
 .login-form h3,
@@ -137,7 +132,6 @@ Form Styling
   text-align: center;
   text-shadow: var(--lightShadow);
 }
-
 
 #basketball{
   display: flex;
@@ -211,12 +205,12 @@ button.btn-form:before {
 
 button.btn-form:active {
   color: var(--mainWhite);
-
 }
 
 button.btn-form:active:after {
   background: var(--mainBlack)
 }
+
 button.btn-form:hover{
   color: var(--mainWhite);
 }
@@ -270,7 +264,19 @@ Form Links
 .error-message{
   color: var(--lightRed);
   font-weight: 700;
+}
 
+/*
+====================
+Error Page Styling
+====================
+*/
+
+.error-page{
+  border-radius: var(--mainBorderRadius);
+  background: rgba(23, 23, 23, 0.9);
+  box-shadow: -1px 4px 28px 0 rgba(0, 0, 0, 0.75);
+  padding: 2em;
 }
 
 /*
@@ -281,7 +287,7 @@ Navbar Styling
 
 .nav-fx{
  background-color: var(--mainBlack);
-  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 4px 28px 0 rgba(0, 0, 0, 0.75);
 }
 
 .nav-link{
@@ -313,7 +319,6 @@ Media Queries
 ====================
 */
 
-
 @media screen and (max-width: 780px) {
   .banner-content{
     margin: 0;
@@ -324,6 +329,10 @@ Media Queries
   .banner-content{
     margin: 0;
     padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .banner-content h1{
@@ -333,7 +342,14 @@ Media Queries
   .banner-content p{
     font-size: .8em;
     font-weight: 600;
-    text-align: justify;
+  }
+
+  .basketball-icon{
+    font-size: 1.4em;
+  }
+
+  .lead-text{
+    text-align: center;
   }
 
   .login-form-row{
